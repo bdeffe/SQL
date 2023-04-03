@@ -1,0 +1,35 @@
+--create clothing store database--
+
+CREATE table store (ID integer PRIMARY key, item TEXT, color TEXT, price INTEGER, popularity INTEGER);
+
+Insert into store values (1, "shirt", "white", 5, 20);
+Insert into store values (2, "shirt", "pink", 5, 25);
+Insert into store values (3, "shirt", "orange", 5, 30);
+Insert into store values (4, "shirt", "green", 5, 35);
+Insert into store values (5, "shirt", "black", 5, 40);
+Insert into store values (6, "shirt", "purple", 5, 50);
+Insert into store values (7, "pants", "white", 10, 43);
+Insert into store values (8, "pants", "pink", 10, 46);
+Insert into store values (9, "pants", "orange", 10, 57);
+Insert into store values (10, "pants", "green", 10, 69);
+Insert into store values (11, "pants", "black", 10, 90);
+Insert into store values (12, "pants", "purple", 10, 15);
+Insert into store values (13, "shoes", "white", 15, 88);
+Insert into store values (14, "shoes", "pink", 15, 22);
+Insert into store values (15, "shoes", "black", 15, 76);
+
+--Display the data ordered by price-
+
+Select * FROM store
+order by price asc;
+
+--What is the sum price of one of each item in the store?--
+
+Select SUM(price) from store
+
+--What are the 5 most popular items?--
+
+SELECT item, price, popularity
+FROM store
+order by popularity asc
+limit 5; 
